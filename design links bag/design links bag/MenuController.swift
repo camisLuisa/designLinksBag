@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import WeDeploy
 
 struct MenuItem : Codable {
     let id : Int
@@ -25,11 +26,8 @@ class MenuController: NSObject {
     ]
     """
     
-    
     @IBOutlet weak var menu: NSMenu!
-    @IBOutlet weak var lexiconDownloadMasterFile: NSMenuItem!
-    @IBOutlet weak var testingEnvironmentsDXP: NSMenuItem!
-    @IBOutlet weak var DXPCE: NSMenuItem!
+
     
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     
@@ -37,8 +35,8 @@ class MenuController: NSObject {
         let icon = NSImage(named:NSImage.Name("StatusBarButtonImage"))
         statusItem.image = icon
         statusItem.menu = menu
-
         constructMenu()
+        
     }
     
     func constructMenu() {
