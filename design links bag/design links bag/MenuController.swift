@@ -8,49 +8,26 @@
 
 import Cocoa
 import WeDeploy
-
-struct MenuItem : Codable {
-    let id : String
-    let name : String
-    let link : String
-    
-}
+import SocketIO
 
 class MenuController: NSObject {
     
-    var menuItems = ""
-    
-    let json:String = """
-    [
-        {"id": 1,"itemName":"design","itemUrl":"https://liferaydesign-handbook.wedeploy.io/docs/"},
-        {"id": 2,"itemName":"liferay","itemUrl":"https://liferaydesign-handbook.wedeploy.io/docs/"},
-        {"id": 3,"itemName":"loop","itemUrl":"https://liferaydesign-handbook.wedeploy.io/docs/"}
-    ]
-    """
-    
     @IBOutlet weak var menu: NSMenu!
-
-    
+  
+    let menuItemService = MenuItemURLService.getInstance
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-    
+
     override func awakeFromNib(){
         let icon = NSImage(named:NSImage.Name("StatusBarButtonImage"))
         statusItem.image = icon
         statusItem.menu = menu
-        constructMenu()
-        //saveData()
-        
+     
+        menuItemService.fetch { (menuItemList) in
+            self.defineSection(sectionList: menuItemList)
+        }
     }
     
-    func constructMenu() {
-        getData()
-        
-        menu.addItem(NSMenuItem(
-            title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        
-    }
-    
-    @objc func goToLink(_ sender: MenuItemHelp) {
+    @objc func goToLink(_ sender: UrlMenuItem) {
         guard let urlString = sender.url else{
             return
         }
@@ -59,57 +36,94 @@ class MenuController: NSObject {
         NSWorkspace.shared.open(url)
     }
     
-    func serializeJson(menuItems : String){
-        let data = menuItems.data(using: .utf8)
-        let jsonDecoder = JSONDecoder()
-        let menuItemList = try! jsonDecoder.decode([MenuItem].self, from: data!)
+    func defineSection(sectionList : [MenuItem]) {
+        //define principal section                                              
+        for item in sectionList {
+            if item.isSection() {
+                //if is a item with a list of sections
+               if let firstItem = item.itemList?.first?.itemList?.first, firstItem.itemList == nil {
+                    let itemWithSubMenu = createSubmenu(sectionItem: item)
+                    self.menu.addItem(itemWithSubMenu)
+                    
+                  //if is a section
+                } else {
+                    self.menu.addItem(NSMenuItem.separator())
+                    let sectionElement = UrlMenuItem(title: item.title,
+                                                     action: nil, keyEquivalent: "")
+                    sectionElement.target = self
+                    self.menu.addItem(sectionElement)
+                
+                    guard let sectionItemList = item.itemList else {
+                        print("Section without itemList")
+                        return
+                    }
+                    for sectionItem in sectionItemList {
+                        if sectionItem.isSection() {
+                            let sectionItemElement = createSubmenu(sectionItem: sectionItem)
+                            self.menu.addItem(sectionItemElement)
+                            
+                        } else {
+                            let sectionItemElement = UrlMenuItem(title: sectionItem.title,
+                                                                 action: #selector(goToLink(_:)),
+                                                                 keyEquivalent: "")
+                            sectionItemElement.url = sectionItem.link
+                            sectionItemElement.target = self
+                            self.menu.addItem(sectionItemElement)
+                        }
+                        
+                    }
+                }
+               //if is a principal item
+            } else {
+                let itemElement = UrlMenuItem(title: item.title, action: #selector(goToLink(_:)),
+                                              keyEquivalent: "")
+                itemElement.url = item.link
+                itemElement.target = self
+                self.menu.addItem(itemElement)
+            }
+        }
+        menu.addItem(NSMenuItem(
+            title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+    }
+    
+    func createSubmenu(sectionItem : MenuItem) -> NSMenuItem {
+        let itemWithSubMenu = UrlMenuItem(title: sectionItem.title, action: nil, keyEquivalent: "")
+        let subMenu = NSMenu()
         
-        for menuItem in menuItemList {
-            let item = MenuItemHelp(
-                title: menuItem.name, action: #selector(goToLink(_:)), keyEquivalent: "")
-            item.url = menuItem.link
-            item.target = self
-            menu.addItem(item)
-        }
-    }
-    
-    func getData(){
-        WeDeploy
-            .data("data-designlinksbag.wedeploy.io")
-            .get(resourcePath: "menuItems")
-            .then { menuItem in
-                self.deserialize(value : menuItem)
-                //print(menuItem)
-        }
-    }
-    
-    func deserialize(value : [[String:Any]]) {
-        do{
-            let jsonData = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-            self.serializeJson(menuItems: String(data: jsonData, encoding: .utf8)!)
-            
-        } catch {
-            print(error.localizedDescription)
+        for subSection in sectionItem.itemList! {
+            if subSection.isSection() {
+                subMenu.addItem(NSMenuItem.separator())
+                let subSectionElement = UrlMenuItem(title: subSection.title, action: nil,
+                                                    keyEquivalent: "")
+                subSectionElement.target = self
+                subMenu.addItem(subSectionElement)
+                
+                if let subItemList = subSection.itemList {
+                    for subItem in subItemList {
+                        let subItemElement = UrlMenuItem(title: subItem.title,
+                                                         action:  #selector(goToLink(_:)),
+                                                         keyEquivalent: "")
+                        subItemElement.url = subItem.link
+                        subItemElement.target = self
+                        subMenu.addItem(subItemElement)
+                    }
+                }
+            } else {
+                let subItem = UrlMenuItem(title: subSection.title,
+                                          action: #selector(goToLink(_:)), keyEquivalent: "")
+                subItem.url = subSection.link
+                subItem.target = self
+                subMenu.addItem(subItem)
+            }
         }
         
-
+        itemWithSubMenu.submenu = subMenu
+        itemWithSubMenu.target = self
+        
+        return itemWithSubMenu
     }
-    
-    func saveData(){
-        WeDeploy
-            .data("data-designlinksbag.wedeploy.io")
-            .create(resource: "menuItems", object: [
-                "name" : "Test",
-                "link" : "https://liferaydesign-handbook.wedeploy.io/docs/"
-                ])
-            .then { menuItem in
-                print(menuItem)
-        }
-    }
-   
 }
 
-class MenuItemHelp: NSMenuItem {
+class UrlMenuItem: NSMenuItem {
     var url : String?
-    
 }

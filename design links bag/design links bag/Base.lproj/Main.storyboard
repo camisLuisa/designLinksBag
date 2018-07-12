@@ -680,13 +680,7 @@
                         <outlet property="menu" destination="taL-Jr-y1k" id="ael-Us-qeX"/>
                     </connections>
                 </customObject>
-                <menu title="test" id="taL-Jr-y1k">
-                    <items>
-                        <menuItem title=" 📘 Design Handbook" id="lkk-ix-17S">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                    </items>
-                </menu>
+                <menu title="test" id="taL-Jr-y1k"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

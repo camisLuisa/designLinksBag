@@ -12,6 +12,10 @@
 		6227F91620EAAB4400691E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6227F91520EAAB4400691E5B /* Assets.xcassets */; };
 		6227F91920EAAB4400691E5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6227F91720EAAB4400691E5B /* Main.storyboard */; };
 		6227F92220ED6CE800691E5B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6227F92120ED6CE800691E5B /* MenuController.swift */; };
+		625D3C5620F7D1E700C280B7 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5520F7D1E700C280B7 /* MenuItem.swift */; };
+		625D3C5920F7D4AB00C280B7 /* MenuItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5820F7D4AB00C280B7 /* MenuItemService.swift */; };
+		625D3C5B20F7DBFD00C280B7 /* MenuItemWeDeployService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5A20F7DBFD00C280B7 /* MenuItemWeDeployService.swift */; };
+		625D3C5D20F7DEDE00C280B7 /* MenuItemURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5C20F7DEDE00C280B7 /* MenuItemURLService.swift */; };
 		AC86DCF6EC4D9380B6A1A564 /* Pods_design_links_bag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AEF135ADA90D9326F88578 /* Pods_design_links_bag.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +28,10 @@
 		6227F91A20EAAB4400691E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6227F91B20EAAB4400691E5B /* design_links_bag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = design_links_bag.entitlements; sourceTree = "<group>"; };
 		6227F92120ED6CE800691E5B /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		625D3C5520F7D1E700C280B7 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		625D3C5820F7D4AB00C280B7 /* MenuItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemService.swift; sourceTree = "<group>"; };
+		625D3C5A20F7DBFD00C280B7 /* MenuItemWeDeployService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemWeDeployService.swift; sourceTree = "<group>"; };
+		625D3C5C20F7DEDE00C280B7 /* MenuItemURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemURLService.swift; sourceTree = "<group>"; };
 		9A3BA344613863AEDB9AE0E7 /* Pods-design links bag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-design links bag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-design links bag/Pods-design links bag.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AEF135ADA90D9326F88578 /* Pods_design_links_bag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_design_links_bag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE385AD90D13BC81308C6E35 /* Pods-design links bag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-design links bag.release.xcconfig"; path = "Pods/Target Support Files/Pods-design links bag/Pods-design links bag.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +87,8 @@
 		6227F91020EAAB4300691E5B /* design links bag */ = {
 			isa = PBXGroup;
 			children = (
+				625D3C5720F7D39D00C280B7 /* service */,
+				625D3C5420F7D1A300C280B7 /* model */,
 				6227F91120EAAB4300691E5B /* AppDelegate.swift */,
 				6227F91320EAAB4300691E5B /* ViewController.swift */,
 				6227F91520EAAB4400691E5B /* Assets.xcassets */,
@@ -88,6 +98,24 @@
 				6227F92120ED6CE800691E5B /* MenuController.swift */,
 			);
 			path = "design links bag";
+			sourceTree = "<group>";
+		};
+		625D3C5420F7D1A300C280B7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				625D3C5520F7D1E700C280B7 /* MenuItem.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		625D3C5720F7D39D00C280B7 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				625D3C5820F7D4AB00C280B7 /* MenuItemService.swift */,
+				625D3C5A20F7DBFD00C280B7 /* MenuItemWeDeployService.swift */,
+				625D3C5C20F7DEDE00C280B7 /* MenuItemURLService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625D3C5920F7D4AB00C280B7 /* MenuItemService.swift in Sources */,
 				6227F91420EAAB4300691E5B /* ViewController.swift in Sources */,
+				625D3C5B20F7DBFD00C280B7 /* MenuItemWeDeployService.swift in Sources */,
+				625D3C5D20F7DEDE00C280B7 /* MenuItemURLService.swift in Sources */,
+				625D3C5620F7D1E700C280B7 /* MenuItem.swift in Sources */,
 				6227F92220ED6CE800691E5B /* MenuController.swift in Sources */,
 				6227F91220EAAB4300691E5B /* AppDelegate.swift in Sources */,
 			);
@@ -351,7 +383,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "design links bag/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luisa.design-links-bag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -367,7 +402,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "design links bag/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luisa.design-links-bag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
