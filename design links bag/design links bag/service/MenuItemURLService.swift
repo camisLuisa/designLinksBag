@@ -16,7 +16,7 @@ class MenuItemURLService: MenuItemService {
     }
     
     func fetch(callBack : @escaping (_ menuItemList : [MenuItem]) -> Void) {
-        let urlString = URL(string: "https://data-designlinksbag.wedeploy.io/DesignLinkBag")
+        let urlString = URL(string: "https://data-designlinksbag.wedeploy.io/DesignLinkBagData/299927665602327996")
         
         if let url = urlString {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
