@@ -82,6 +82,7 @@ class MenuController: NSObject {
                 self.menu.addItem(itemElement)
             }
         }
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(
             title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     }
