@@ -35,6 +35,6 @@ class MenuItemURLService: MenuItemService {
     private func deserialize(data: Data) -> [MenuItem] {
         let jsonDecoder = JSONDecoder()
         
-        return try! jsonDecoder.decode([MenuItem].self, from: data)
+        return try! jsonDecoder.decode(Result.self, from: data).items
     }
 }
