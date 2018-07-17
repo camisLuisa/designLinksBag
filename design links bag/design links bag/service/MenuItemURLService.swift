@@ -10,6 +10,8 @@ import Foundation
 
 class MenuItemURLService: MenuItemService {
     static var getInstance: MenuItemService = MenuItemURLService()
+    let defaults =  UserDefaults.standard
+    let key = "menuData"
     
     private init(){
         
@@ -21,10 +23,17 @@ class MenuItemURLService: MenuItemService {
         if let url = urlString {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error != nil {
+                    
+                    let data = self.defaults.data(forKey: self.key)
+                    if let dataInfo = data {
+                        callBack(self.deserialize(data: dataInfo))
+                    }
                     print(error)
+                    
                 } else {
                     if let usableData = data {
                         callBack(self.deserialize(data: usableData))
+                        self.defaults.set(data, forKey: self.key)
                     }
                 }
             }

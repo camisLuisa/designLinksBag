@@ -10,21 +10,21 @@ import Foundation
 import SocketIO
 import WeDeploy
 
-class MenuItemWeDeployService: MenuItemService {
+class MenuItemWeDeployService {
     
     var socketWeDeploy : SocketIOClient?
-    static var getInstance: MenuItemService = MenuItemWeDeployService()
+    static var getInstance: MenuItemWeDeployService = MenuItemWeDeployService()
     
     private init() {
         socketWeDeploy = WeDeploy
             .data("data-designlinksbag.wedeploy.io")
-            .watch(resourcePath: "DesignLinkBag")
+            .watch(resourcePath: "DesignLinkBagData")
     }
     
     func fetch(callBack : @escaping (_ menuItemList : [MenuItem]) -> Void) {
         WeDeploy
                 .data("data-designlinksbag.wedeploy.io")
-                .get(resourcePath: "DesignMenuTest")
+                .get(resourcePath: "DesignLinksBagData")
                 .then { menuItem in
                     callBack(self.deserialize(value : menuItem))
                 }
@@ -50,13 +50,14 @@ class MenuItemWeDeployService: MenuItemService {
         return try! jsonDecoder.decode([MenuItem].self, from: data!)
     }
     
-    private func realTime() {
+    public func realTime(callback : @escaping () -> ()) {
         guard let socket = socketWeDeploy else {
             return
         }
         socket.on([.changes, .error]) { data in
             switch(data.type) {
             case .changes:
+                callback()
                 print("changes \(data.document)")
             case .error:
                 print("error \(data.document)")

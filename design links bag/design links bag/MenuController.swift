@@ -15,6 +15,7 @@ class MenuController: NSObject {
     @IBOutlet weak var menu: NSMenu!
   
     let menuItemService = MenuItemURLService.getInstance
+    let menuItemServiceWeDeploy = MenuItemWeDeployService.getInstance
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
 
     override func awakeFromNib(){
@@ -25,6 +26,17 @@ class MenuController: NSObject {
         menuItemService.fetch { (menuItemList) in
             self.defineSection(sectionList: menuItemList)
         }
+        
+        menuItemServiceWeDeploy.realTime {
+            self.statusItem.menu?.removeAllItems()
+            self.menuItemService.fetch { (menuItemList) in
+                self.defineSection(sectionList: menuItemList)
+            }
+
+        }
+        
+        
+        
     }
     
     @objc func goToLink(_ sender: UrlMenuItem) {
