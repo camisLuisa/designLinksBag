@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09AFDACC5522DBF2582B9E15 /* Pods_designLinksBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656BC1543930193A4DC8B1F5 /* Pods_designLinksBag.framework */; };
+		4A19E68E21022E250098722B /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A19E68D21022E250098722B /* settings.plist */; };
 		6227F91220EAAB4300691E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6227F91120EAAB4300691E5B /* AppDelegate.swift */; };
 		6227F91420EAAB4300691E5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6227F91320EAAB4300691E5B /* ViewController.swift */; };
 		6227F91620EAAB4400691E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6227F91520EAAB4400691E5B /* Assets.xcassets */; };
@@ -17,10 +19,12 @@
 		625D3C5B20F7DBFD00C280B7 /* MenuItemWeDeployService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5A20F7DBFD00C280B7 /* MenuItemWeDeployService.swift */; };
 		625D3C5D20F7DEDE00C280B7 /* MenuItemURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5C20F7DEDE00C280B7 /* MenuItemURLService.swift */; };
 		625D3C5F20F9574000C280B7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D3C5E20F9574000C280B7 /* Result.swift */; };
-		AC86DCF6EC4D9380B6A1A564 /* Pods_design_links_bag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AEF135ADA90D9326F88578 /* Pods_design_links_bag.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23489C08FCEC38D15B37C4AF /* Pods-designLinksBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-designLinksBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-designLinksBag/Pods-designLinksBag.debug.xcconfig"; sourceTree = "<group>"; };
+		305C8E8FC217D1BE034F516B /* Pods-designLinksBag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-designLinksBag.release.xcconfig"; path = "Pods/Target Support Files/Pods-designLinksBag/Pods-designLinksBag.release.xcconfig"; sourceTree = "<group>"; };
+		4A19E68D21022E250098722B /* settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		6227F90E20EAAB4300691E5B /* designLinksBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = designLinksBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6227F91120EAAB4300691E5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6227F91320EAAB4300691E5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +38,8 @@
 		625D3C5A20F7DBFD00C280B7 /* MenuItemWeDeployService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemWeDeployService.swift; sourceTree = "<group>"; };
 		625D3C5C20F7DEDE00C280B7 /* MenuItemURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemURLService.swift; sourceTree = "<group>"; };
 		625D3C5E20F9574000C280B7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		656BC1543930193A4DC8B1F5 /* Pods_designLinksBag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_designLinksBag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3BA344613863AEDB9AE0E7 /* Pods-design links bag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-design links bag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-design links bag/Pods-design links bag.debug.xcconfig"; sourceTree = "<group>"; };
-		B8AEF135ADA90D9326F88578 /* Pods_design_links_bag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_design_links_bag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE385AD90D13BC81308C6E35 /* Pods-design links bag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-design links bag.release.xcconfig"; path = "Pods/Target Support Files/Pods-design links bag/Pods-design links bag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC86DCF6EC4D9380B6A1A564 /* Pods_design_links_bag.framework in Frameworks */,
+				09AFDACC5522DBF2582B9E15 /* Pods_designLinksBag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,8 @@
 			children = (
 				9A3BA344613863AEDB9AE0E7 /* Pods-design links bag.debug.xcconfig */,
 				CE385AD90D13BC81308C6E35 /* Pods-design links bag.release.xcconfig */,
+				23489C08FCEC38D15B37C4AF /* Pods-designLinksBag.debug.xcconfig */,
+				305C8E8FC217D1BE034F516B /* Pods-designLinksBag.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -63,7 +69,7 @@
 		276466CF26DAC9498FA335AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B8AEF135ADA90D9326F88578 /* Pods_design_links_bag.framework */,
+				656BC1543930193A4DC8B1F5 /* Pods_designLinksBag.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,6 +104,7 @@
 				6227F91A20EAAB4400691E5B /* Info.plist */,
 				6227F91B20EAAB4400691E5B /* design_links_bag.entitlements */,
 				6227F92120ED6CE800691E5B /* MenuController.swift */,
+				4A19E68D21022E250098722B /* settings.plist */,
 			);
 			path = "design links bag";
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6227F91620EAAB4400691E5B /* Assets.xcassets in Resources */,
+				4A19E68E21022E250098722B /* settings.plist in Resources */,
 				6227F91920EAAB4400691E5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +208,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-design links bag-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-designLinksBag-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -213,7 +221,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-design links bag/Pods-design links bag-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-designLinksBag/Pods-designLinksBag-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
@@ -230,7 +238,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-design links bag/Pods-design links bag-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-designLinksBag/Pods-designLinksBag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -380,13 +388,13 @@
 		};
 		6227F91F20EAAB4400691E5B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A3BA344613863AEDB9AE0E7 /* Pods-design links bag.debug.xcconfig */;
+			baseConfigurationReference = 23489C08FCEC38D15B37C4AF /* Pods-designLinksBag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "design links bag/design_links_bag.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7H3SPU5TB9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "design links bag/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,19 +402,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liferay.designlinksbag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		6227F92020EAAB4400691E5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE385AD90D13BC81308C6E35 /* Pods-design links bag.release.xcconfig */;
+			baseConfigurationReference = 305C8E8FC217D1BE034F516B /* Pods-designLinksBag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "design links bag/design_links_bag.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7H3SPU5TB9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "design links bag/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,6 +423,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liferay.designlinksbag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

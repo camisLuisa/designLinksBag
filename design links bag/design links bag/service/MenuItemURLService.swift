@@ -16,14 +16,23 @@ class MenuItemURLService: MenuItemService {
     private init(){
         
     }
-    
+	func getProjectId() -> String {
+		let bundle = Bundle(for: type(of: self))
+		var settings: [String: String]?
+		if let path = bundle.path(forResource: "settings", ofType:"plist") {
+			settings = NSDictionary(contentsOfFile: path) as? [String: String]
+		}
+		
+		return settings?["projectId"] ?? ""
+	}
+	
     func fetch(callBack : @escaping (_ menuItemList : [MenuItem]) -> Void) {
-        let urlString = URL(string: "https://data-designlinksbag.wedeploy.io/DesignLinkBagData/299927665602327996")
+		let projectId = getProjectId()
+        let urlString = URL(string: "https://data-designlinksbag.wedeploy.io/DesignLinkBagData/\(projectId)")
         
         if let url = urlString {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    
                     let data = self.defaults.data(forKey: self.key)
                     if let dataInfo = data {
                         callBack(self.deserialize(data: dataInfo))

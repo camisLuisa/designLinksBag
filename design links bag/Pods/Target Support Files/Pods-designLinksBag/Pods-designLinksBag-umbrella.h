@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_design_links_bagVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_design_links_bagVersionString[];
+FOUNDATION_EXPORT double Pods_designLinksBagVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_designLinksBagVersionString[];
 
