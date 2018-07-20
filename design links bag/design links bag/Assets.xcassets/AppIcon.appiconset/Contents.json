@@ -11,9 +11,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "iconLiferay.png",
+      "size" : "32x32",
       "scale" : "1x"
     },
     {
@@ -47,8 +46,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "Liferay Design Links.png",
       "scale" : "2x"
     }
   ],
