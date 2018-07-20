@@ -39,8 +39,6 @@
 		625D3C5C20F7DEDE00C280B7 /* MenuItemURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemURLService.swift; sourceTree = "<group>"; };
 		625D3C5E20F9574000C280B7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		656BC1543930193A4DC8B1F5 /* Pods_designLinksBag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_designLinksBag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A3BA344613863AEDB9AE0E7 /* Pods-design links bag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-design links bag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-design links bag/Pods-design links bag.debug.xcconfig"; sourceTree = "<group>"; };
-		CE385AD90D13BC81308C6E35 /* Pods-design links bag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-design links bag.release.xcconfig"; path = "Pods/Target Support Files/Pods-design links bag/Pods-design links bag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +56,6 @@
 		07CE1ADBFDEC85E0D5755446 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A3BA344613863AEDB9AE0E7 /* Pods-design links bag.debug.xcconfig */,
-				CE385AD90D13BC81308C6E35 /* Pods-design links bag.release.xcconfig */,
 				23489C08FCEC38D15B37C4AF /* Pods-designLinksBag.debug.xcconfig */,
 				305C8E8FC217D1BE034F516B /* Pods-designLinksBag.release.xcconfig */,
 			);
