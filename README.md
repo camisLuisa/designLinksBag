@@ -112,7 +112,10 @@ The menu consists of sections and items. A section is made up of items and subse
       ]
     }
   ]
-}```
+}
+```
+
+_Thanks to the Design and Mobile guilds of Liferay Recife which are great contributors to the project development._
 
 
 
