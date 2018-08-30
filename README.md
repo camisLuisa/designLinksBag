@@ -4,16 +4,20 @@
 
 1. [Download App](https://drive.google.com/file/d/1ZwlISlWo5-rfOW1KMcgPDTLHDg04R3ow/view?usp=sharing);
 2. Unzip the application;
-3. Drop the .app in the Applications folder
+3. Drop the .app in the Applications folder;
 4. To make the app open on every login in macOS, go to System Preferences -> Users and groups -> Login Items
-5. Add the **designLinksBag.app** in Login Items list
-	![Texto alternativo opcional se a imagem não carregar](https://github.com/camisLuisa/designLinksBag/blob/master/tutorial-images/image_1.png)
-6. Create the menu
+5. Add the **designLinksBag.app** in Login Items list;
+
+![Texto alternativo opcional se a imagem não carregar](https://github.com/camisLuisa/designLinksBag/blob/master/tutorial-images/image_1.png)
+
+6. Done!
+
+**To use the menu it is necessary to have the guild menu created first;**
 
 ## Requirements for creating and updating the menu
 
-1. Download [json file](https://drive.google.com/drive/folders/1GG3WQ6g56MjaDRm6iUpVVfr_IPuN341x)
-2. Download and install Postman
+1. Download [json file](https://drive.google.com/drive/folders/1GG3WQ6g56MjaDRm6iUpVVfr_IPuN341x);
+2. Download and install Postman;
 3. After installing Postman:
   * Import json file
   
@@ -41,8 +45,11 @@
 ![Texto alternativo opcional se a imagem não carregar](https://github.com/camisLuisa/designLinksBag/blob/master/tutorial-images/image_6.png)
 
 4. Will appear behind the body a box with some informations that were created, one of these is the menu id:
+
+![Texto alternativo opcional se a imagem não carregar](https://github.com/camisLuisa/designLinksBag/blob/master/tutorial-images/image_11.png)
+
 5. Cope the sequence of numbers.
-6. Now open the application folder and find the app.
+6. Now **open the Application Folder** and find the app.
 7. Click on it to see more informations -> Click on Show Package Contents
 
 ![Texto alternativo opcional se a imagem não carregar](https://github.com/camisLuisa/designLinksBag/blob/master/tutorial-images/image_8.png)
@@ -51,6 +58,7 @@
 9. Will appear this window:
 
 ![Texto alternativo opcional se a imagem não carregar](https://github.com/camisLuisa/designLinksBag/blob/master/tutorial-images/image_9.png)
+
 10. Select the sequence of number and delete -> Paste the sequence numbers that was copied -> Click on enter;
 11. Open the app from Applications folder. Your computer needs to be connected to the internet at the first time that you 12. install the app;
 
