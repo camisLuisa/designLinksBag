@@ -12,7 +12,7 @@
 
 ## Requirements for creating and updating the menu
 
-1. Download json file
+1. Download [json file](https://drive.google.com/drive/folders/1GG3WQ6g56MjaDRm6iUpVVfr_IPuN341x)
 2. Download and install Postman
 3. After installing Postman:
   * Import json file
